@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Navigation Menu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Prompt", sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+
+        .positoin-flxed {
+            position: fixed;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 30, 0.95) 100%);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            margin-top: 3vw;
+            z-index: 99;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            box-shadow: 
+                0 0 50px rgba(0, 255, 157, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .positoin-flxed::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff9d, transparent);
+            animation: scanLine 3s linear infinite;
+        }
+
+        @keyframes scanLine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px #00ff9d, 0 0 10px #00ff9d, 0 0 15px #00ff9d; }
+            50% { text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 0 0 30px #00ff9d; }
+        }
+
+        @keyframes slideText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @media screen and (max-width: 991px) {
+            .positoin-flxed {
+                margin-top: 10%;
+            }
+        }
+
+        .positoin-flxed.active {
+            opacity: 1;
+            top: 0;
+            visibility: visible;
+            height: unset;
+            min-height: 50vh;
+            animation: activateGlow 0.5s ease-in-out;
+        }
+
+        @keyframes activateGlow {
+            0% { box-shadow: 0 0 20px rgba(0, 255, 157, 0.2); }
+            100% { box-shadow: 0 0 50px rgba(0, 255, 157, 0.4); }
+        }
+
+        .positoin-flxed .wave-img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            filter: drop-shadow(0 0 10px #00ff9d);
+        }
+
+        .product-nav-content {
+            padding: 3%;
+            height: auto;
+            width: 100%;
+            z-index: 9;
+            position: relative;
+        }
+
+        .product-nav-top-buttons {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 5%;
+            margin-bottom: 20px;
+        }
+
+        .top-button {
+            border: 2px solid #00ff9d;
+            border-radius: 16px;
+            background: linear-gradient(45deg, rgba(0, 255, 157, 0.1), rgba(0, 255, 157, 0.05));
+            color: #00ff9d;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex: 1;
+            padding: 15px;
+            cursor: pointer;
+            box-shadow: 
+                0 0 20px rgba(0, 255, 157, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .top-button:hover::before {
+            left: 100%;
+        }
+
+        .top-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 5px 25px rgba(0, 255, 157, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            text-shadow: 0 0 10px #00ff9d;
+        }
+
+        .top-button.active {
+            background: linear-gradient(45deg, #00ff9d, #00cc7a);
+            color: #000;
+            box-shadow: 
+                0 0 30px rgba(0, 255, 157, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .product-link-img-container {
+            display: flex;
+            min-height: 10vh;
+            margin-top: 1%;
+            gap: 5%;
+            position: relative;
+        }
+
+        .link-grid {
+            flex: 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-top: 2%;
+            gap: 5%;
+        }
+
+        .grid-inner-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .grid-inner-list::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #00ff9d, transparent);
+            opacity: 0.5;
+        }
+
+        .grid-inner-list .grid-item-card {
+            color: #ffffff;
+            font-size: 1.41vw;
+            border-bottom: 1.5px solid rgba(0, 255, 157, 0.3);
+            padding: 15px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-item-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.1), transparent);
+            transition: left 0.3s ease;
+        }
+
+        .grid-item-card:hover::before {
+            left: 100%;
+        }
+
+        .grid-item-card p {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .grid-item-card img {
+            height: auto;
+            width: 100%;
+            object-fit: contain;
+            max-width: 75px;
+            filter: drop-shadow(0 0 5px #00ff9d);
+        }
+
+        .grid-inner-list a {
+            text-decoration: none;
+        }
+
+        .grid-item-card.active {
+            color: #00ff9d;
+            border-bottom: 2px solid #00ff9d;
+            background: rgba(0, 255, 157, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+            animation: glow 2s infinite;
+        }
+
+        .grid-item-card:hover {
+            color: #00ff9d;
+            border-bottom: 2px solid #00ff9d;
+            background: rgba(0, 255, 157, 0.1);
+            transform: translateX(10px);
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+        }
+
+        .product-img-container {
+            flex: 1;
+            position: relative;
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            background: linear-gradient(45deg, rgba(0, 255, 157, 0.05), rgba(0, 255, 157, 0.1));
+        }
+
+        .product-img-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00ff9d, transparent, #00ff9d);
+            border-radius: 15px;
+            z-index: -1;
+            animation: rotateBorder 4s linear infinite;
+        }
+
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .product-img-container img {
+            height: auto;
+            width: 100%;
+            object-fit: cover;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 157, 0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .product-img-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Running text animation */
+        .running-text {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 5px 0;
+            border-top: 1px solid rgba(0, 255, 157, 0.3);
+        }
+
+        .running-text span {
+            display: inline-block;
+            color: #00ff9d;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            animation: slideText 15s linear infinite;
+            text-shadow: 0 0 5px #00ff9d;
+        }
+
+        /* Demo button to activate menu */
+        .demo-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #00ff9d, #00cc7a);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .demo-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.7);
+        }
+
+        @media (max-width: 1200px) {
+            .product-nav-content {
+                padding: 2%;
+            }
+
+            .product-nav-top-buttons {
+                gap: 3%;
+            }
+
+            .top-button {
+                font-size: 1.3rem;
+                padding: 12px 8px;
+            }
+
+            .product-link-img-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .link-grid {
+                flex: unset;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .grid-inner-list {
+                justify-content: flex-start;
+            }
+
+            .grid-inner-list .grid-item-card {
+                font-size: 1.1rem;
+                padding: 8px 5px;
+            }
+
+            .product-img-container {
+                flex: unset;
+                width: 100%;
+                max-height: 300px;
+                overflow: hidden;
+            }
+
+            .product-img-container img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .positoin-flxed {
+                padding: 2%;
+            }
+
+            .product-nav-top-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .top-button {
+                font-size: 1.1rem;
+                padding: 12px 0;
+            }
+
+            .product-link-img-container {
+                gap: 15px;
+            }
+
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-inner-list {
+                margin-bottom: 10px;
+            }
+
+            .grid-inner-list .grid-item-card {
+                font-size: 1rem;
+            }
+
+            .product-img-container {
+                max-height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-nav-content {
+                padding: 1.5%;
+            }
+
+            .top-button {
+                font-size: 1rem;
+                padding: 10px 0;
+            }
+
+            .grid-inner-list .grid-item-card {
+                font-size: 0.9rem;
+            }
+
+            .product-img-container {
+                max-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="demo-button" onclick="toggleMenu()">TOGGLE MENU</button>
+
+    <div class="positoin-flxed" id="menu">
+        <div class="product-nav-content">
+            <div class="product-nav-top-buttons">
+                <button class="top-button active" onclick="switchTab(0, this)">Adhesives & Sealants</button>
+                <button class="top-button" onclick="switchTab(1, this)">Coatings & putty</button>
+                <button class="top-button" onclick="switchTab(2, this)">Maintenance & Nylon</button>
+            </div>
+            <div class="product-link-img-container">
+                <div class="link-grid" id="productGrid">
+                    <div class="grid-inner-list">
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product1.webp')">
+                            <p>1. 109 Ultra Clear</p>
+                        </a>
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product2.png')">
+                            <p>2. 109 UV Ultra Clear</p>
+                        </a>
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product4.png')">
+                            <p>3. 1K Single part epoxy</p>
+                        </a>
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product5.png')">
+                            <p>4. TG-109 Thermal Conductive Grease</p>
+                        </a>
+                    </div>
+                    <div class="grid-inner-list">
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product7.png')">
+                            <p>5. Preekkote 85–S</p>
+                        </a>
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product1.webp')">
+                            <p>6. V52 Aluminium Putty</p>
+                        </a>
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product2.png')">
+                            <p>7. 11116 Metal Expoxy</p>
+                        </a>
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product4.png')">
+                            <p>8. Nylon-11 Liquid Powder</p>
+                        </a>
+                    </div>
+                    <div class="grid-inner-list">
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product5.png')">
+                            <p>9. MOS2-W Dry Coating</p>
+                        </a>
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product7.png')">
+                            <p>10. High Temperature Ptfe Grease</p>
+                        </a>
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product1.webp')">
+                            <p>11. High Strength</p>
+                        </a>
+                        <a href="#" class="grid-item-card" onmouseover="changeImage('../nav/Product4.png')">
+                            <p>12. 2870 Thread Locker</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-img-container">
+                    <img src="../nav/Product1.webp" alt="Product" id="productImage">
+                </div>
+            </div>
+        </div>
+        <div class="running-text">
+            <span>🔬 OODA BOND - Advanced Adhesive Solutions • Premium Quality Products • Industrial Grade Performance • Cutting-edge Technology • Innovation in Bonding • </span>
+        </div>
+    </div>
+
+    <script>
+        const productData = {
+            0: [
+                { name: "1. 109 Ultra Clear", img: "../nav/Product1.webp" },
+                { name: "2. 109 UV Ultra Clear", img: "../nav/Product2.png" },
+                { name: "3. 1K Single part epoxy", img: "../nav/Product4.png" },
+                { name: "4. TG-109 Thermal Conductive Grease", img: "../nav/Product5.png" },
+                { name: "5. Preekkote 85–S", img: "../nav/Product7.png" },
+                { name: "6. V52 Aluminium Putty", img: "../nav/Product1.webp" },
+                { name: "7. 11116 Metal Expoxy", img: "../nav/Product2.png" },
+                { name: "8. Nylon-11 Liquid Powder", img: "../nav/Product4.png" }
+            ],
+            1: [
+                { name: "9. MOS2-W Dry Coating", img: "../nav/Product5.png" },
+                { name: "10. High Temperature Ptfe Grease", img: "../nav/Product7.png" },
+                { name: "11. Premium Coating Solution", img: "../nav/Product1.webp" },
+                { name: "12. Advanced Putty Formula", img: "../nav/Product2.png" }
+            ],
+            2: [
+                { name: "11. High Strength", img: "../nav/Product4.png" },
+                { name: "12. 2870 Thread Locker", img: "../nav/Product5.png" },
+                { name: "13. Maintenance Spray", img: "../nav/Product7.png" },
+                { name: "14. Nylon Reinforcement", img: "../nav/Product1.webp" }
+            ]
+        };
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+        function switchTab(tabIndex, button) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.top-button').forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            // Update product grid
+            const grid = document.getElementById('productGrid');
+            const products = productData[tabIndex];
+            
+            grid.innerHTML = '';
+            
+            // Create columns
+            const col1 = document.createElement('div');
+            const col2 = document.createElement('div');
+            col1.className = 'grid-inner-list';
+            col2.className = 'grid-inner-list';
+
+            products.forEach((product, index) => {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.className = 'grid-item-card';
+                link.innerHTML = `<p>${product.name}</p>`;
+                link.onmouseover = () => changeImage(product.img);
+                
+                if (index < products.length / 2) {
+                    col1.appendChild(link);
+                } else {
+                    col2.appendChild(link);
+                }
+            });
+
+            grid.appendChild(col1);
+            grid.appendChild(col2);
+
+            // Update default image
+            if (products.length > 0) {
+                changeImage(products[0].img);
+            }
+        }
+
+        function changeImage(imageSrc) {
+            const img = document.getElementById('productImage');
+            img.style.opacity = '0.5';
+            setTimeout(() => {
+                img.src = imageSrc;
+                img.style.opacity = '1';
+            }, 150);
+        }
+
+        // Initialize with first tab
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-open menu after 2 seconds for demo
+            setTimeout(() => {
+                toggleMenu();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
