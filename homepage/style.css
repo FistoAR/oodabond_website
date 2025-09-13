@@ -2926,13 +2926,15 @@ button::before {
 }
 
 .parent-hero{
-     padding-top: 6%;
+     padding-top: 5%;
 }
 
 .hero-text{
     width: 100%;
     display: flex;
     justify-content: center;
+    font-size: 3vw;
+    font-weight: 500;
 }
 
 /* hero section cards */
