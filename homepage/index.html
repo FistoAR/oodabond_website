@@ -157,27 +157,32 @@
                     </div>
                 </div>
             </section> -->
+            <div class="parent-hero">
+                <div class="hero-text">
+                    <p>OODA Bond Adhesive - Always ontime support and all time cost saving solution </p>
+                </div>
+                <div class="Hero-section">
+                    <div class="hero-card">
+                        <video src="./home video/single epoxy 03.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="hero-card">
+                        <video src="./home video/single epoxy 03.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="hero-card">
+                        <video src="./home video/Thread Locker 4.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="hero-card">
+                        <video src="./home video/Pre Applied Thread coating_comp.mp4" autoplay loop muted
+                            playsinline></video>
+                    </div>
+                    <div class="hero-card">
+                        <video src="./home video/109 Ultra Clear (1).mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="hero-card">
+                        <video src="./home video/109 UV ultra clear_comp.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                </div>
 
-            <div class="Hero-section">
-                <div class="hero-card">
-                    <p>Stronger Bonds, Smarter Manufacturing</p>
-                </div>
-                <div class="hero-card">
-                    <video src="./home video/single epoxy 03.mp4" autoplay loop muted playsinline></video>
-                </div>
-                <div class="hero-card">
-                    <video src="./home video/Thread Locker 4.mp4" autoplay loop muted playsinline></video>
-                </div>
-                <div class="hero-card">
-                    <video src="./home video/Pre Applied Thread coating_comp.mp4" autoplay loop muted
-                        playsinline></video>
-                </div>
-                <div class="hero-card">
-                    <video src="./home video/109 Ultra Clear (1).mp4" autoplay loop muted playsinline></video>
-                </div>
-                <div class="hero-card">
-                    <video src="./home video/109 UV ultra clear_comp.mp4" autoplay loop muted playsinline></video>
-                </div>
             </div>
 
             <!-- <img src="./homepage/images/trusted_products/Website 1.webp" alt=""> -->
@@ -239,7 +244,7 @@
                 <div class="bullet-item">Increased productivity</div>
                 <div class="bullet-item">Increased product reliability</div>
                 <div class="bullet-item">On time delivery, on time support</div>
-                <div class="bullet-item">Technical support 24*7</div>
+                <div class="bullet-item">Technical support 24/7</div>
                 <div class="bullet-item">Customized and tailor-made solutions possible</div>
                 <div class="bullet-item">Free demo for all our products</div>
                 <div class="bullet-item">100% meet customer need with satisfaction</div>
@@ -794,22 +799,53 @@
                 <p class="what-if-number-container"><span id="what-if-stepNumber">1</span></p>
 
                 <div class="what-if-svg-container">
-                    <svg width="1920" height="1650" viewBox="0 0 1920 1650" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="960" cy="828.5" r="754.5" stroke="#3D3D3D" stroke-width="2" fill="none" />
+                    <svg width="1920" height="1650" viewBox="0 0 1920 1650" xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- Outer Circle -->
+                        <circle cx="960" cy="828.5" r="754.5" stroke="#3D3D3D" stroke-width="2"
+                            fill="url(#galaxyGradient)" filter="url(#glow)" />
+
+                        <!-- Motion Path -->
                         <path id="what-if-entryArcPath"
                             d="M 960 74 A 754.5 754.5 0 0 0 205 828.5 A 754.5 754.5 0 0 0 960 1602 A 754.5 754.5 0 0 0 1715 828.5 A 754.5 754.5 0 0 0 960 74"
                             fill="none" stroke="none" />
+
+                        <!-- Blue Dot -->
                         <circle id="what-if-blueDot" r="20" fill="#17D7FF" />
+
+                        <!-- Gradients + Glow -->
+                        <defs>
+                            <!-- Galaxy Gradient -->
+                            <radialGradient id="galaxyGradient" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#00eaff" stop-opacity="0.9" />
+                                <stop offset="40%" stop-color="#0055ff" stop-opacity="0.6" />
+                                <stop offset="80%" stop-color="#001133" stop-opacity="0.8" />
+                                <stop offset="100%" stop-color="#000000" stop-opacity="1" />
+                            </radialGradient>
+
+                            <!-- Glow Filter -->
+                            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur" />
+                                <feMerge>
+                                    <feMergeNode in="blur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
                     </svg>
 
+                    <!-- Star Layer inside circle -->
+                    <div class="galaxy-stars"></div>
+
+                    <!-- Center Content -->
                     <div class="what-if-center-content">
                         <div class="what-if-line" id="what-if-verticalLine"></div>
                         <h1 id="what-if-centerHeading">Invisible</h1>
-                        <p id="what-if-centerText">So strength didn’t come at the cost of clarity.
-                        </p>
+                        <p id="what-if-centerText">So strength didn’t come at the cost of clarity.</p>
                     </div>
                 </div>
+
+
 
             </section>
 

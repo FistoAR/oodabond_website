@@ -2461,7 +2461,7 @@ section.products-section {
     margin: 0 auto;
     line-height: 1.5;
     opacity: 0.8;
-    color: #6B6B6B;
+    color: #e6e5e5;
 }
 
 .what-if-number-container {
@@ -2925,6 +2925,16 @@ button::before {
     position: relative;
 }
 
+.parent-hero{
+     padding-top: 6%;
+}
+
+.hero-text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 /* hero section cards */
 .Hero-section {
     display: grid;
@@ -2932,7 +2942,6 @@ button::before {
     grid-template-rows: repeat(2, auto);
     gap: 20px;
     padding: 20px;
-    padding-top: 6%;
 }
 
 .hero-card {
@@ -2946,7 +2955,7 @@ button::before {
 }
 
 /* For the first card (text only) */
-.hero-card:first-child {
+/* .hero-card:first-child {
     padding: 20px;
     display: flex;
     align-items: center;
@@ -2959,7 +2968,7 @@ button::before {
     font-weight: bold;
     text-align: center;
     margin: 0;
-}
+} */
 
 /* For video cards */
 .hero-card video {
@@ -3245,3 +3254,5 @@ button::before {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+
