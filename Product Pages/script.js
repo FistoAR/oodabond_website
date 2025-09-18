@@ -3,60 +3,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const productGrid = document.querySelector(".product-grid");
+  // const productGrid = document.querySelector(".product-grid");
 
-  const images = [
-    "109_Clear_Casting.webp",
-    "109_TG.webp",
-    "109_UV_Ultra_Clear.webp",
-    "2044_Pre_Applied_Thread_Locker.webp",
-    "2870_Thread_Locker.webp",
-    "6838High_strength.webp",
-    "11116_Metal_Expoxy.webp",
-    "Nylon11.webp",
-    "single_part_epoxy.webp",
-    "v52_Aluminum_Expoxy.webp"
-  ];
+  // const images = [
+  //   "109_Clear_Casting.webp",
+  //   "109_TG.webp",
+  //   "109_UV_Ultra_Clear.webp",
+  //   "2044_Pre_Applied_Thread_Locker.webp",
+  //   "2870_Thread_Locker.webp",
+  //   "6838High_strength.webp",
+  //   "11116_Metal_Expoxy.webp",
+  //   "Nylon11.webp",
+  //   "single_part_epoxy.webp",
+  //   "v52_Aluminum_Expoxy.webp"
+  // ];
 
-  images.forEach((file) => {
-    const wrapper = document.createElement("div");
-    wrapper.classList.add("img-wrapper");
+  // images.forEach((file) => {
+  //   const wrapper = document.createElement("div");
+  //   wrapper.classList.add("img-wrapper");
 
-    const img = document.createElement("img");
-    img.src = `./assets/images/Products_grid/${file}`;
-    img.alt = file;
+  //   const img = document.createElement("img");
+  //   img.src = `./assets/images/Products_grid/${file}`;
+  //   img.alt = file;
 
-    wrapper.style.opacity = "0";
-    wrapper.style.transform = "translateY(30px)";
-    wrapper.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+  //   wrapper.style.opacity = "0";
+  //   wrapper.style.transform = "translateY(30px)";
+  //   wrapper.style.transition = "opacity 0.8s ease, transform 0.8s ease";
 
-    wrapper.appendChild(img);
-    productGrid.appendChild(wrapper);
-  });
+  //   wrapper.appendChild(img);
+  //   productGrid.appendChild(wrapper);
+  // });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const items = Array.from(productGrid.querySelectorAll(".img-wrapper"));
+  // const observer = new IntersectionObserver((entries) => {
+  //   entries.forEach((entry) => {
+  //     const items = Array.from(productGrid.querySelectorAll(".img-wrapper"));
 
-      if (entry.isIntersecting) {
-        items.forEach((item, i) => {
-          setTimeout(() => {
-            item.style.opacity = "1";
-            item.style.transform = "translateY(0)";
-          }, i * 200);
-        });
-      } else {
-        items.slice().reverse().forEach((item, i) => {
-          setTimeout(() => {
-            item.style.opacity = "0";
-            item.style.transform = "translateY(30px)";
-          }, i * 150);
-        });
-      }
-    });
-  }, { threshold: 0.2 });
+  //     if (entry.isIntersecting) {
+  //       items.forEach((item, i) => {
+  //         setTimeout(() => {
+  //           item.style.opacity = "1";
+  //           item.style.transform = "translateY(0)";
+  //         }, i * 200);
+  //       });
+  //     } else {
+  //       items.slice().reverse().forEach((item, i) => {
+  //         setTimeout(() => {
+  //           item.style.opacity = "0";
+  //           item.style.transform = "translateY(30px)";
+  //         }, i * 150);
+  //       });
+  //     }
+  //   });
+  // }, { threshold: 0.2 });
 
-  observer.observe(productGrid);
+  // observer.observe(productGrid);
 
 
 

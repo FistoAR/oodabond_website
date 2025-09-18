@@ -1,0 +1,340 @@
+.Mid-section {
+    width: 100%;
+    margin-top: 2%;
+    max-height: 90vh;
+    min-height: 90vh;
+}
+
+.buttons-container {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.45%;
+}
+
+.btns {
+    display: flex;
+    column-gap: 2%;
+    padding: 0.45%;
+    border: 1px solid white;
+    border-radius: 10px;
+    backdrop-filter: blur(40px);
+}
+
+
+.buttons-container button {
+    padding: 0.5vw 1vw;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: .95vw;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-container button.active {
+    color: #565454;
+    background-color: #ffffff;
+}
+
+.content-loader {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    color: white;
+}
+
+.left-content {
+    width: 35%;
+    height: 80vh;
+    padding: 1% 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.right-content {
+    width: 65%;
+    height: 80vh;
+    padding: 4% 0.3%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+}
+
+.right-content .card {
+    background: #2b2f33;
+    padding: 1rem;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content-title {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.product-title {
+    justify-self: flex-start;
+    align-self: flex-start;
+    font-size: 3.3vw;
+    font-weight: bold;
+    margin-top: -1%;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 400% 400%;
+    animation: titleWave 3s ease-in-out infinite;
+    line-height: 1;
+}
+
+.product-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleGlow 2s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes titleWave {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes titleGlow {
+
+    0%,
+    100% {
+        filter: blur(0px);
+    }
+
+    50% {
+        filter: blur(2px);
+    }
+}
+
+.section-title {
+    font-size: 3vw;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    word-break: break-word;
+    display: flex;
+    align-items: flex-end;
+}
+
+.content-img {
+    height: 55%;
+    width: 100%;
+    background: linear-gradient(to right, #0CC081 31%, #02A6D3 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+    border-radius: 1.4vw;
+    overflow: hidden;
+}
+
+.content-img img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+
+.tech-container,
+.benefits-container {
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    max-height: 100%;
+    row-gap: 6%;
+}
+
+.benefit-item,
+.tech-item {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.05vw;
+    font-weight: 500;
+    column-gap: 1.5%;
+    text-wrap: nowrap;
+}
+
+.benefit-icon {
+    width: 2.2vw;
+    height: 2.2vw;
+    flex-shrink: 0;
+}
+
+.tech-title {
+    font-weight: bold;
+    margin-right: 0.6vw;
+}
+
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    text-align: center;
+}
+
+.application-item img {
+    max-width: 100px;
+    margin-bottom: 8px;
+}
+
+.application-item p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+
+@media (max-width: 1200px) {
+    .Mid-section {
+        height: auto;
+        min-height: auto;
+        max-height: none;
+    }
+
+    .buttons-container {
+        display: none;
+    }
+
+    .content-loader {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-content {
+        width: 100%;
+        height: auto;
+        padding: 4% 2%;
+        justify-content: flex-start;
+    }
+
+    .right-content {
+        width: 100%;
+        height: auto;
+        padding: 4% 2%;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    .content-title{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20%;
+    }
+
+    .product-title {
+        font-size: 10vw;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 4%;
+    }
+
+    .section-title {
+        font-size: 5vw;
+    }
+
+   
+    .content-img {
+        height: auto;    
+        padding: 20px;  
+    }
+
+    .content-img img {
+        max-width: 60%;     
+    }
+
+    .right-content h2{
+        margin: 8% 0 5% 0;
+        font-size: 7.5vw;
+    }
+
+    .tech-container,
+    .benefits-container {
+        row-gap: 5vw;
+    }
+
+    .benefit-item,
+    .tech-item {
+        font-size: 4vw;
+        text-wrap: unset;
+        align-items: start;
+    }
+
+    .benefit-icon {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .applications-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .application-item img {
+        max-width: 80px;
+    }
+
+    .application-item p {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: 1200px) and (min-width:700px) {
+      .product-title {
+        font-size: 8vw;
+    }
+
+     .right-content h2{
+        margin: 6% 0 5% 0;
+        font-size: 5.5vw;
+    }
+
+     .benefit-item,
+    .tech-item {
+        font-size: 3vw;
+    }
+}
+

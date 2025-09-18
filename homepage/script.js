@@ -69,7 +69,7 @@ if (shouldPlayPreloader) {
 
   // ✅ Just wait for video to end
   if (video) {
-     let hasStarted = false;
+    let hasStarted = false;
 
     // Listen for video 'play' event to confirm playback has started
     video.addEventListener("play", () => {
@@ -117,7 +117,7 @@ if (shouldPlayPreloader) {
 // function animateWords() {
 //   // Add your word animation logic here
 //   console.log("Animating words...");
-  
+
 //   // Example: Show main content
 //   const mainContent = document.getElementById('mainContent');
 //   if (mainContent) {
@@ -139,7 +139,7 @@ if (shouldPlayPreloader) {
 //   if (shouldPlayPreloader) {
 //     // Remove the trigger flag
 //     sessionStorage.removeItem("triggerPreloader");
-    
+
 //     // Add loading state to body
 //     document.body.classList.add("loading");
 
@@ -181,12 +181,12 @@ if (shouldPlayPreloader) {
 //         video.addEventListener('ended', () => {
 //           allVideosLoaded().then(handlePreloaderEnd);
 //         });
-        
+
 //         // Start video playback
 //         video.currentTime = 0;
 //         video.muted = false;
 //         const playPromise = video.play();
-        
+
 //         if (playPromise !== undefined) {
 //           playPromise.catch(error => {
 //             console.warn('Video autoplay failed:', error);
@@ -205,12 +205,12 @@ if (shouldPlayPreloader) {
 //           video.addEventListener('ended', () => {
 //             allVideosLoaded().then(handlePreloaderEnd);
 //           });
-          
+
 //           // Start video playback
 //           video.currentTime = 0;
 //           video.muted = false;
 //           const playPromise = video.play();
-          
+
 //           if (playPromise !== undefined) {
 //             playPromise.catch(error => {
 //               console.warn('Video autoplay failed:', error);
@@ -261,7 +261,7 @@ if (window.innerWidth >= 992) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const isMobileOrTablet = window.innerWidth <= 1024; 
+  const isMobileOrTablet = window.innerWidth <= 1024;
 
   document.querySelectorAll("video").forEach(video => {
     if (isMobileOrTablet) {
@@ -271,12 +271,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (video.requestFullscreen) {
           video.requestFullscreen();
         } else if (video.webkitEnterFullscreen) {
-          video.webkitEnterFullscreen(); 
+          video.webkitEnterFullscreen();
         } else if (video.msRequestFullscreen) {
-          video.msRequestFullscreen(); 
+          video.msRequestFullscreen();
         }
 
-        video.play(); 
+        video.play();
       });
     } else {
       // video.setAttribute("controls", "true");
@@ -460,19 +460,19 @@ const showDemo = () => {
       : [w.scrollWidth * -1, 0];
 
     gsap.fromTo(w, { x }, {
-    x: xEnd,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: section,
-      scrub: 2,
-      start: 'top bottom',
-      end: `+=${Math.abs(w.scrollWidth - section.offsetWidth)}`, // match pixel distance
-    }
-  });
+      x: xEnd,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        scrub: 2,
+        start: 'top bottom',
+        end: `+=${Math.abs(w.scrollWidth - section.offsetWidth)}`, // match pixel distance
+      }
+    });
 
   });
 
-  setupImageGridScrollAnimations(); 
+  setupImageGridScrollAnimations();
 };
 
 function showDemoMobileMarquee() {
@@ -490,14 +490,14 @@ function showDemoMobileMarquee() {
     const distance = wrapper.scrollWidth / 2;
 
     const fromX = index % 2 ? 0 : -distance;
-    const toX   = index % 2 ? -distance : 0;
+    const toX = index % 2 ? -distance : 0;
 
-    gsap.fromTo(wrapper, 
+    gsap.fromTo(wrapper,
       { x: fromX },
-      { 
+      {
         x: toX,
         ease: "linear",
-        duration: 10, 
+        duration: 10,
         repeat: -1
       }
     );
@@ -514,99 +514,99 @@ imagesLoaded(images1).on('always', () => {
 
 
 
-if (window.innerWidth >= 992) {
- 
-  window.addEventListener('load', () => {
- 
-    const tlCustom = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".industries-we-serve-section-main",
-        start: "top top",
-        end: () => "+=" + document.querySelector(".industries-we-serve-content").offsetHeight * 2.5,
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-      }
-    });
- 
-    // Your existing animations
-    tlCustom.to(".industries-we-serve-circle-bg", {
-      scale: 4,
-      xPercent: 10,
-      transformOrigin: "center center",
-      ease: "none"
-    }, 0);
- 
-    tlCustom.to(".industries-we-serve-image-wrapper", {
-      xPercent: 20,
-      height: "auto",
-      ease: "none"
-    }, 0);
- 
-    tlCustom.to(".industries-we-serve-image-wrapper img", {
-  xPercent: 0,
-  height: "auto",
-  width: '40vw',
-  ease: "none"
-}, 0);
- 
-    tlCustom.to(".industries-we-serve-top-left", {
-      yPercent: -1600,
-      opacity: 0,
-      ease: "none"
-    }, 0);
- 
- 
- 
-    tlCustom.to(".industries-we-serve-bottom-right", {
-      yPercent: 1600,
-      opacity: 0,
-      ease: "none"
-    }, 0);
- 
-    tlCustom.fromTo(".industries-we-serve-content",
-      {
-        yPercent: 100,
-        borderTopRightRadius: 350,
-      },
-      {
-        yPercent: 0,
-        borderTopRightRadius: 0,
-        ease: "power2.out"
-      },
-      1.5
-    );
- 
- 
-tlCustom.to(".industries-we-serve-image-wrapper", {
-  xPercent: 0,
-  ease: "none"
-}, 0.6); // <-- run after previous
-   
-tlCustom.fromTo(".industries-we-serve-image-wrapper", {
-  height: "50%",
-  ease: "none"
-}, {height: "100%", ease: "none"}, 0.4); // <-- run after previous
- 
-tlCustom.to(".industries-we-serve-image-wrapper img", {
-  xPercent: 0,
-  height: "100%",
-  width: 'auto',
-  ease: "none"
-}, 0.25); // <-- same here
- 
-    tlCustom.from(".industries-we-serve-content-inner", {
-      y: 950,
-      duration: 1,
-      ease: "power2.out"
-    }, 2);
- 
-   
- 
-  });
- 
-}
- 
+// if (window.innerWidth >= 992) {
+
+//   window.addEventListener('load', () => {
+
+//     const tlCustom = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: ".industries-we-serve-section-main",
+//         start: "top top",
+//         end: () => "+=" + document.querySelector(".industries-we-serve-content").offsetHeight * 2.5,
+//         scrub: true,
+//         pin: true,
+//         anticipatePin: 1,
+//       }
+//     });
+
+//     // Your existing animations
+//     tlCustom.to(".industries-we-serve-circle-bg", {
+//       scale: 4,
+//       xPercent: 10,
+//       transformOrigin: "center center",
+//       ease: "none"
+//     }, 0);
+
+//     tlCustom.to(".industries-we-serve-image-wrapper", {
+//       xPercent: 20,
+//       height: "auto",
+//       ease: "none"
+//     }, 0);
+
+//     tlCustom.to(".industries-we-serve-image-wrapper img", {
+//       xPercent: 0,
+//       height: "auto",
+//       width: '40vw',
+//       ease: "none"
+//     }, 0);
+
+//     tlCustom.to(".industries-we-serve-top-left", {
+//       yPercent: -1600,
+//       opacity: 0,
+//       ease: "none"
+//     }, 0);
+
+
+
+//     tlCustom.to(".industries-we-serve-bottom-right", {
+//       yPercent: 1600,
+//       opacity: 0,
+//       ease: "none"
+//     }, 0);
+
+//     tlCustom.fromTo(".industries-we-serve-content",
+//       {
+//         yPercent: 100,
+//         borderTopRightRadius: 350,
+//       },
+//       {
+//         yPercent: 0,
+//         borderTopRightRadius: 0,
+//         ease: "power2.out"
+//       },
+//       1.5
+//     );
+
+
+//     tlCustom.to(".industries-we-serve-image-wrapper", {
+//       xPercent: 0,
+//       ease: "none"
+//     }, 0.6); // <-- run after previous
+
+//     tlCustom.fromTo(".industries-we-serve-image-wrapper", {
+//       height: "50%",
+//       ease: "none"
+//     }, { height: "100%", ease: "none" }, 0.4); // <-- run after previous
+
+//     tlCustom.to(".industries-we-serve-image-wrapper img", {
+//       xPercent: 0,
+//       height: "100%",
+//       width: 'auto',
+//       ease: "none"
+//     }, 0.25); // <-- same here
+
+//     tlCustom.from(".industries-we-serve-content-inner", {
+//       y: 950,
+//       duration: 1,
+//       ease: "power2.out"
+//     }, 2);
+
+
+
+//   });
+
+// }
+
 
 
 const images = [
@@ -672,79 +672,79 @@ window.addEventListener('load', () => {
 
 
 
-  const mainSection = document.querySelector(".made-in-sec-main-section");
-  const gradientOverlay = document.querySelector(".made-in-sec-gradient-overlay");
-  const revealCircle = document.querySelector(".made-in-sec-reveal-circle");
+  // const mainSection = document.querySelector(".made-in-sec-main-section");
+  // const gradientOverlay = document.querySelector(".made-in-sec-gradient-overlay");
+  // const revealCircle = document.querySelector(".made-in-sec-reveal-circle");
 
-  const textGroup = document.querySelector(".made-in-sec-text-group");
-
-
-  const maxRadiusPx = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2);
-
-  // ✅ Set initial mask and reveal circle position
-  gradientOverlay.style.webkitMaskImage = `radial-gradient(circle 80px at center, transparent 99%, black 100%)`;
-  gradientOverlay.style.maskImage = `radial-gradient(circle 80px at center, transparent 99%, black 100%)`;
-  revealCircle.style.transform = `scale(${80 / 40})`;
-
-  if (window.innerWidth < 480) {
-    revealCircle.style.transform = `scale(${80 / 20})`; // Adjust for smaller screens
-    gradientOverlay.style.webkitMaskImage = `radial-gradient(circle 40px at center, transparent 99%, black 100%)`;
-    gradientOverlay.style.maskImage = `radial-gradient(circle 40px at center, transparent 99%, black 100%)`;
-  }
-
-  ScrollTrigger.create({
-    trigger: mainSection,
-    start: "top top",
-    end: "+=100%",  // Pin for 1 viewport height, adjust if needed
-    scrub: true,
-    pin: true,
-
-    onUpdate: (self) => {
-      const progress = self.progress;
-      const clampedProgress = Math.min(Math.max(progress, 0), 1);
-
-      // Animate radius from small to large
-      const radiusPx = 80 + clampedProgress * (maxRadiusPx - 80);
-
-      // Use mask: transparent inside circle (reveals video), black outside (gradient overlay visible)
-      gradientOverlay.style.webkitMaskImage = `radial-gradient(circle ${radiusPx}px at center, transparent 99%, black 100%)`;
-      gradientOverlay.style.maskImage = `radial-gradient(circle ${radiusPx}px at center, transparent 99%, black 100%)`;
-
-      // Scale revealCircle div accordingly (optional)
-      const scale = radiusPx / 40;  // base radius half of 80px
-      revealCircle.style.transform = `scale(${scale})`;
-
-        const fadeStart = 0;      // Start fading at 0% scroll
-  const fadeEnd = 0.5;      // Fully faded by 50% scroll progress
-
-  let fadeOpacity;
-  if (clampedProgress < fadeStart) {
-    fadeOpacity = 1;
-  } else if (clampedProgress > fadeEnd) {
-    fadeOpacity = 0;
-  } else {
-    // Linear interpolation between 1 and 0
-    fadeOpacity = 1 - (clampedProgress - fadeStart) / (fadeEnd - fadeStart);
-  }
-
-  const playButton = document.querySelector(".made-in-sec-play-button");
-  playButton.style.opacity = fadeOpacity;
-    },
-  });
+  // const textGroup = document.querySelector(".made-in-sec-text-group");
 
 
+  // const maxRadiusPx = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2);
 
-  gsap.to(textGroup, {
-    y: "-200px",
-    opacity: 0,
-    duration: 0.02,
-    ease: "power1.out",
-    scrollTrigger: {
-      trigger: mainSection,
-      start: "top top",
-      scrub: true,
-    },
-  });
+  // // ✅ Set initial mask and reveal circle position
+  // gradientOverlay.style.webkitMaskImage = `radial-gradient(circle 80px at center, transparent 99%, black 100%)`;
+  // gradientOverlay.style.maskImage = `radial-gradient(circle 80px at center, transparent 99%, black 100%)`;
+  // revealCircle.style.transform = `scale(${80 / 40})`;
+
+  // if (window.innerWidth < 480) {
+  //   revealCircle.style.transform = `scale(${80 / 20})`; // Adjust for smaller screens
+  //   gradientOverlay.style.webkitMaskImage = `radial-gradient(circle 40px at center, transparent 99%, black 100%)`;
+  //   gradientOverlay.style.maskImage = `radial-gradient(circle 40px at center, transparent 99%, black 100%)`;
+  // }
+
+  // ScrollTrigger.create({
+  //   trigger: mainSection,
+  //   start: "top top",
+  //   end: "+=100%",  // Pin for 1 viewport height, adjust if needed
+  //   scrub: true,
+  //   pin: true,
+
+  //   onUpdate: (self) => {
+  //     const progress = self.progress;
+  //     const clampedProgress = Math.min(Math.max(progress, 0), 1);
+
+  //     // Animate radius from small to large
+  //     const radiusPx = 80 + clampedProgress * (maxRadiusPx - 80);
+
+  //     // Use mask: transparent inside circle (reveals video), black outside (gradient overlay visible)
+  //     gradientOverlay.style.webkitMaskImage = `radial-gradient(circle ${radiusPx}px at center, transparent 99%, black 100%)`;
+  //     gradientOverlay.style.maskImage = `radial-gradient(circle ${radiusPx}px at center, transparent 99%, black 100%)`;
+
+  //     // Scale revealCircle div accordingly (optional)
+  //     const scale = radiusPx / 40;  // base radius half of 80px
+  //     revealCircle.style.transform = `scale(${scale})`;
+
+  //     const fadeStart = 0;      // Start fading at 0% scroll
+  //     const fadeEnd = 0.5;      // Fully faded by 50% scroll progress
+
+  //     let fadeOpacity;
+  //     if (clampedProgress < fadeStart) {
+  //       fadeOpacity = 1;
+  //     } else if (clampedProgress > fadeEnd) {
+  //       fadeOpacity = 0;
+  //     } else {
+  //       // Linear interpolation between 1 and 0
+  //       fadeOpacity = 1 - (clampedProgress - fadeStart) / (fadeEnd - fadeStart);
+  //     }
+
+  //     const playButton = document.querySelector(".made-in-sec-play-button");
+  //     playButton.style.opacity = fadeOpacity;
+  //   },
+  // });
+
+
+
+  // gsap.to(textGroup, {
+  //   y: "-200px",
+  //   opacity: 0,
+  //   duration: 0.02,
+  //   ease: "power1.out",
+  //   scrollTrigger: {
+  //     trigger: mainSection,
+  //     start: "top top",
+  //     scrub: true,
+  //   },
+  // });
 
 
 
@@ -1186,7 +1186,7 @@ gsap.fromTo(".made-in-sec-reveal-circle", {
     start: "top 75%",
     toggleActions: "play reverse play reverse"
   },
-  
+
   scale: 1,
   opacity: 1,
   duration: 1.2,
@@ -1197,13 +1197,13 @@ gsap.fromTo(".made-in-sec-reveal-circle", {
 gsap.fromTo(".mob-made-in-sec-heading-1.mob-made-in-sec-rotated", {
   y: 0,
   opacity: 1
-},{
+}, {
   scrollTrigger: {
     trigger: ".mob-section-wrapper",
     start: "top 80%",
     toggleActions: "play reverse play reverse"
   },
-  y:-50,
+  y: -50,
   opacity: 0,
   duration: 1,
   ease: "power2.out"
@@ -1212,7 +1212,7 @@ gsap.fromTo(".mob-made-in-sec-heading-1.mob-made-in-sec-rotated", {
 gsap.from(".mob-made-in-sec-heading-2", {
   y: 0,
   opacity: 1
-},{
+}, {
   scrollTrigger: {
     trigger: ".mob-section-wrapper",
     start: "top 80%",
@@ -1289,7 +1289,7 @@ function setupImageGridScrollAnimations() {
     // Don't run animation on mobile
     return;
   }
-    const imgElement = document.querySelector(".image-grid-section .scaler img");
+  const imgElement = document.querySelector(".image-grid-section .scaler img");
   const originalSrc = "./product images/Adhesive Solutions.webp";
   const newSrc = "./product images/center_image_adhesive.webp";
   const tl = gsap.timeline({
@@ -1300,22 +1300,22 @@ function setupImageGridScrollAnimations() {
       scrub: 1,
       pin: true,
       pinSpacing: true,
-       onEnter: () => {
+      onEnter: () => {
         imgElement.src = originalSrc;
-    },
-       onEnterBack: () => {
+      },
+      onEnterBack: () => {
         imgElement.src = originalSrc;
-    },
+      },
 
-    // 👇 Fires when scrolling back out of the section (reverse)
-    onLeaveBack: () => {
+      // 👇 Fires when scrolling back out of the section (reverse)
+      onLeaveBack: () => {
         imgElement.src = originalSrc;
-    },
+      },
       onComplete: () => {
         // Timeline reached end (forward)
         imgElement.src = newSrc;
-    },
-   
+      },
+
     }
   });
 
@@ -1350,16 +1350,16 @@ function setupImageGridScrollAnimations() {
     }, "zoomEnd")
 
     .add(() => {
-    // This block runs both forward and backward
-    const progress = tl.progress();
-    if (progress === 1) {
+      // This block runs both forward and backward
+      const progress = tl.progress();
+      if (progress === 1) {
         // Timeline reached the end
         imgElement.src = newSrc;
-    } else if (progress === 0) {
+      } else if (progress === 0) {
         // Timeline reversed back to beginning
         imgElement.src = originalSrc;
-    }
-});
+      }
+    });
 }
 
 

@@ -7,6 +7,7 @@
   <title>11116 METAL EPOXY</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.1/sketch.min.js"></script>
   <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./midSection.css">
   <link rel="stylesheet" href="../global.css">
   <link rel="icon" href="../logo.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -39,11 +40,7 @@
   </header>
   <div class="positoin-flxed">
     <div class="product-nav-content">
-      <div class="product-nav-top-buttons">
-        <button class="top-button active">Adhesives & Sealants</button>
-        <button class="top-button">Coatings & putty</button>
-        <button class="top-button">Maintenance & Nylon</button>
-      </div>
+
       <div class="product-link-img-container">
         <div class="link-grid">
           <div class="grid-inner-list">
@@ -114,10 +111,9 @@
             <source srcset="./assets/images/Metal_epoxy/Metal mobile home.webp" media="(max-width: 991px)" />
 
             <!-- Fallback image if none match -->
-            <img src="./assets/images/Metal_epoxy/Metal mobile home.webp" alt="Video preview"
-              loading="lazy" />
+            <img src="./assets/images/Metal_epoxy/Metal mobile home.webp" alt="Video preview" loading="lazy" />
           </picture>
-          
+
         </div>
 
         <div class="hero-bottom-text-container">
@@ -136,447 +132,55 @@
         <div id="timeline-container"></div>
       </section>
 
-      <section class="section-2">
-        <div class="button-container">
-          <button data-index="0" class="active">Technical Properties</button>
-          <button data-index="1">Applications</button>
-          <button data-index="2">Benefits</button>
+      <section class="Mid-section">
+        <div class="buttons-container">
+          <div class="btns">
+            <button data-index="0" class="active">Technical Properties</button>
+            <button data-index="1">Applications</button>
+            <button data-index="2">Benefits</button>
+          </div>
         </div>
 
-        <div class="panel-container">
-          <div class="panel" id="panel1"></div>
-          <div class="panel" id="panel2">
-            <div class="main-container">
-              <div class="productNameScroll popup">11116 METAL EPOXY</div>
-              <div class="inner-main-container">
-                <div
-                  style="display: flex; width: 100%; height: 30vh; justify-content: space-around; align-items: center;">
+        <div class="content-loader">
+          <div class="left-content">
+            <div class="content-title">
+              <p class="product-title"></p>
+              <p class="section-title"></p>
+            </div>
+            <div class="content-img">
 
-                  <div class="application-card-container" style="width: 24%;">
-                    <div class="application-card-image">
-                      <img src="./assets/images/Metal_epoxy/05.webp" alt="image">
-                    </div>
-                    <div class="application-card-content-container">
-                      <img src="./assets/images/pin_image.svg" alt="pin">
-                      <p class="application-card-text">Pipe Sealant</p>
-                    </div>
-                  </div>
-
-
-                  <div class="application-card-container" style="width: 24%;">
-                    <div class="application-card-image">
-                      <img src="./assets/images/Metal_epoxy/06.webp" alt="image">
-                    </div>
-                    <div class="application-card-content-container">
-                      <img src="./assets/images/pin_image.svg" alt="pin">
-                      <p class="application-card-text">Glass</p>
-                    </div>
-                  </div>
-
-                  <div class="application-card-container" style="width: 24%;">
-                    <div class="application-card-image">
-                      <img src="./assets/images/Metal_epoxy/07.webp" alt="image">
-                    </div>
-                    <div class="application-card-content-container">
-                      <img src="./assets/images/pin_image.svg" alt="pin">
-                      <p class="application-card-text">Wood</p>
-                    </div>
-                  </div>
-
-                  <div class="application-card-container" style="width: 24%;">
-                    <div class="application-card-image">
-                      <img src="./assets/images/Metal_epoxy/04.webp" alt="image">
-                    </div>
-                    <div class="application-card-content-container">
-                      <img src="./assets/images/pin_image.svg" alt="pin">
-                      <p class="application-card-text">Leather</p>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div style="display: flex; width: 100%; height: 44vh;">
-                  <div
-                    style="width: 45%; display: flex; flex-direction: column; align-items: center;justify-content: space-around; ">
-
-                    <div class="application-card-container" style="height: 46%; width: 98%;">
-                      <div class="application-card-image">
-                        <img src="./assets/images/Metal_epoxy/01.webp" alt="image">
-                      </div>
-                      <div class="application-card-content-container">
-                        <img src="./assets/images/pin_image.svg" alt="pin">
-                        <p class="application-card-text"> Epoxy</p>
-                      </div>
-                    </div>
-
-                    <div class="application-card-container" style="height: 46%; width: 98%;">
-                      <div class="application-card-image">
-                        <img src="./assets/images/Metal_epoxy/02.webp" alt="image">
-                      </div>
-                      <div class="application-card-content-container">
-                        <img src="./assets/images/pin_image.svg" alt="pin">
-                        <p class="application-card-text">Metals</p>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div
-                    style="display: flex; width: 55%; display: flex; justify-content: space-around; align-items: center;">
-
-                    <div class="application-card-container" style="width: 40%; height: 98%;">
-                      <div class="application-card-image">
-                        <img src="./assets/images/Metal_epoxy/03.webp" alt="image">
-                      </div>
-                      <div class="application-card-content-container">
-                        <img src="./assets/images/pin_image.svg" alt="pin">
-                        <p class="application-card-text">Canvass</p>
-                      </div>
-                    </div>
-
-                    <div class="application-card-container" style="width: 56%; height: 98%;">
-                      <div class="application-card-image">
-                        <img
-                          src="./assets/images/Metal_epoxy/08.webp"
-                          alt="image">
-                      </div>
-                      <div class="application-card-content-container">
-                        <img src="./assets/images/pin_image.svg" alt="pin">
-                        <p class="application-card-text">phenolic laminates</p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
             </div>
           </div>
+          <div class="right-content">
 
-          <div class="panel" id="panel3">
-            <div class="benefits-main-container">
-              <div class="benefits-content-wrapper">
-
-                <!-- LEFT SECTION -->
-                <div class="benefits-left-section">
-                  <div class="benefits-title-block">
-                    <h1 class="benefits-main-title">BENEFITS &</h1>
-                    <h1 class="benefits-main-title">
-                      FEATURES
-                      <div class="benefits-arrow-icon">
-                        <img src="./assets/images/blue_arrow.svg" alt="Arrow pointing to benefits" loading="lazy" />
-                      </div>
-                    </h1>
-                  </div>
-
-                  <div class="benefits-video-container">
-                    <img src="./assets/images/Metal_epoxy/11116_Metal_Epoxy_Benefits.webp" alt="Workspace video thumbnail"
-                      class="benefits-video-thumbnail" loading="lazy" />
-                    <button class="benefits-play-button" aria-label="Play video">
-                      <img src="./assets/images/play_btn.svg" alt="play button" class="openVideoPopup">
-                    </button>
-
-                  </div>
-                </div>
-
-                <!-- RIGHT SECTION -->
-                <div class="benefits-right-section">
-                  <div class="benefits-grid" style="grid-template-columns: repeat(3, 1fr);">
-                    <div class="benefits-card" tabindex="0">Excellent adhesive strength
-                    </div>
-                    <div class="benefits-card" tabindex="0">Non-sag, thixotropic</div>
-                    <div class="benefits-card" tabindex="0">Excellent adhesion to metals and composites</div>
-                    <div class="benefits-card" tabindex="0">Excellent resistance to vibration</div>
-                    <div class="benefits-card" tabindex="0">Good impact strength </div>
-                    <div class="benefits-card" tabindex="0">Strong bonding with glass and ceramics
-                    </div>
-                    <div class="benefits-card" tabindex="0">Excellent resistance to vibration
-                    </div>
-                    <div class="benefits-card" tabindex="0">Minimum cure temperature of start from 80 °C </div>
-                    <div class="benefits-card" tabindex="0">Extremely high tensile and compressive Strength </div>
-                    <div class="benefits-card" tabindex="0">High temperature resistance</div>
-                    <div class="benefits-card" tabindex="0">Ready to dispense—no mixing is required </div>
-                    <div class="benefits-card" tabindex="0">Solvent-free </div>
-                    <div class="benefits-card" tabindex="0">Good resistance to chemicals
-                    </div>
-                    <div class="benefits-card" tabindex="0">Excellent chemical resistance </div>
-                    <div class="benefits-card" tabindex="0">Compatible with many types of plastics</div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
           </div>
         </div>
       </section>
-
-      <section class="mob-scroll-panel-wrapper">
-
-        <div class="mob-scroll-container">
-
-          <div class="mob-sec-main-container mob-panel">
-
-            <div class="mob-sec-title-main">
-              Technical Properties
-            </div>
-
-            <div class="mob-sec-container">
-              <div class="mob-sec-left">
-                <div class="mob-sec-card">
-                  <div class="mob-sec-number">01</div>
-                  <div class="mob-sec-title">Product category group :</div>
-                  <div class="mob-sec-description"><span style="color: #D44E2D;">-----------------</span></div>
-                </div>
-                <div class="mob-sec-card">
-                  <div class="mob-sec-number">02</div>
-                  <div class="mob-sec-title">Product color :</div>
-                  <div class="mob-sec-description">Part A: Black, Part B: Off White Mixed: Grey</div>
-                </div>
-                <div class="mob-sec-card">
-                  <div class="mob-sec-number">03</div>
-                  <div class="mob-sec-title">Electrical properties :</div>
-                  <div class="mob-sec-description"><span style="color: #D44E2D;">-----------------</span></div>
-                </div>
-                <div class="mob-sec-card">
-                  <div class="mob-sec-number">04</div>
-                  <div class="mob-sec-title">UV1 type :</div>
-                  <div class="mob-sec-description"><span style="color: #D44E2D;">-----------------</span></div>
-                </div>
-                <div class="mob-sec-card">
-                  <div class="mob-sec-number">05</div>
-                  <div class="mob-sec-title">Temperature :</div>
-                  <div class="mob-sec-description">Curing at Room Temperature (24 hours)</div>
-                </div>
-              </div>
-
-              <div class="mob-sec-right">
-                <img src="./assets/images/svg_half_round.svg" alt="Illustration" />
-              </div>
-            </div>
-
-            <div class="mob-sec-container mob-sec-container-2">
-              <div class="mob-sec-left">
-                <div class="mob-sec-card">
-                  <div class="mob-sec-number">06</div>
-                  <div class="mob-sec-title">Mixing Ratio :</div>
-                  <div class="mob-sec-description">1:1 by weight</div>
-                </div>
-                <div class="mob-sec-card">
-                  <div class="mob-sec-number">07</div>
-                  <div class="mob-sec-title">Lap Shear Strength :</div>
-                  <div class="mob-sec-description">≥ 100 kg/cm² (≥ 10 MPa)</div>
-                </div>
-                <div class="mob-sec-card">
-                  <div class="mob-sec-number">08</div>
-                  <div class="mob-sec-title">Curing time :</div>
-                  <div class="mob-sec-description">24 hours @ Room Temperature</div>
-                </div>
-                <div class="mob-sec-card">
-                  <div class="mob-sec-number">09</div>
-                  <div class="mob-sec-title">Viscosity :</div>
-                  <div class="mob-sec-description"><span style="color: #D44E2D;">-----------------</span></div>
-                </div>
-                <div class="mob-sec-card">
-                  <div class="mob-sec-number">10</div>
-                  <div class="mob-sec-title">Open pot life mixed :</div>
-                  <div class="mob-sec-description">Maximum 4 minutes</div>
-                </div>
-              </div>
-
-              <div class="mob-sec-right">
-                <img src="./assets/images/svg_half_round.svg" alt="Illustration" />
-              </div>
-            </div>
-          </div>
-          <div class="mob-sec-grid-section">
-            <div class="mob-sec-title-main">
-              Applications
-            </div>
-
-            <div class="mob-sec-card-grid mob-panel">
-              <div class="mob-sec-grid-card">
-                <div class="mob-application-card-container">
-                  <div class="mob-application-card-image">
-                    <img src="./assets/images/Metal_epoxy/05.webp" alt="image">
-                  </div>
-                  <div class="mob-application-card-content-container">
-                    <img src="./assets/images/pin_image.svg" alt="pin">
-                    <p class="mob-application-card-text">Pipe Sealant</p>
-                  </div>
-                </div>
-              </div>
-              <div class="mob-sec-grid-card">
-                <div class="mob-application-card-container">
-                  <div class="mob-application-card-image">
-                    <img src="./assets/images/Metal_epoxy/06.webp" alt="image">
-                  </div>
-                  <div class="mob-application-card-content-container">
-                    <img src="./assets/images/pin_image.svg" alt="pin">
-                    <p class="mob-application-card-text">Glass</p>
-                  </div>
-                </div>
-              </div>
-              <div class="mob-sec-grid-card">
-                <div class="mob-application-card-container">
-                  <div class="mob-application-card-image">
-                    <img src="./assets/images/Metal_epoxy/07.webp" alt="image">
-                  </div>
-                  <div class="mob-application-card-content-container">
-                    <img src="./assets/images/pin_image.svg" alt="pin">
-                    <p class="mob-application-card-text">Wood</p>
-                  </div>
-                </div>
-              </div>
-              <div class="mob-sec-grid-card">
-                <div class="mob-application-card-container">
-                  <div class="mob-application-card-image">
-                    <img src="./assets/images/Metal_epoxy/04.webp" alt="image">
-                  </div>
-                  <div class="mob-application-card-content-container">
-                    <img src="./assets/images/pin_image.svg" alt="pin">
-                    <p class="mob-application-card-text">Leather</p>
-                  </div>
-                </div>
-              </div>
-              <div class="mob-sec-grid-card">
-                <div class="mob-application-card-container">
-                  <div class="mob-application-card-image">
-                    <img src="./assets/images/Metal_epoxy/01.webp" alt="image">
-                  </div>
-                  <div class="mob-application-card-content-container">
-                    <img src="./assets/images/pin_image.svg" alt="pin">
-                    <p class="mob-application-card-text"> Epoxy</p>
-                  </div>
-                </div>
-              </div>
-              <div class="mob-sec-grid-card">
-                <div class="mob-application-card-container">
-                  <div class="mob-application-card-image">
-                    <img src="./assets/images/Metal_epoxy/02.webp" alt="image">
-                  </div>
-                  <div class="mob-application-card-content-container">
-                    <img src="./assets/images/pin_image.svg" alt="pin">
-                    <p class="mob-application-card-text">Metals</p>
-                  </div>
-                </div>
-              </div>
-              <div class="mob-sec-grid-card">
-                <div class="mob-application-card-container">
-                  <div class="mob-application-card-image">
-                    <img src="./assets/images/Metal_epoxy/03.webp" alt="image">
-                  </div>
-                  <div class="mob-application-card-content-container">
-                    <img src="./assets/images/pin_image.svg" alt="pin">
-                    <p class="mob-application-card-text">Canvass</p>
-                  </div>
-                </div>
-              </div>
-              <div class="mob-sec-grid-card">
-                <div class="mob-application-card-container">
-                  <div class="mob-application-card-image">
-                    <img
-                      src="./assets/images/Metal_epoxy/08.webp"
-                      alt="image">
-                  </div>
-                  <div class="mob-application-card-content-container">
-                    <img src="./assets/images/pin_image.svg" alt="pin">
-                    <p class="mob-application-card-text">phenolic laminates</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mob-sec-benefits-main-container mob-panel" style="display: none;">
-
-            <div class="mob-sec-benefits-content-wrapper">
-
-              <!-- TITLE SECTION -->
-              <div class="mob-sec-benefits-title-block">
-                <h1 class="mob-sec-benefits-main-title">BENEFITS &</h1>
-                <h1 class="mob-sec-benefits-main-title">
-                  FEATURES
-                  <div class="mob-sec-benefits-arrow-icon">
-                    <img src="./assets/images/blue_arrow.svg" alt="Arrow pointing to benefits" loading="lazy" />
-                  </div>
-                </h1>
-              </div>
-
-              <!-- CARDS GRID -->
-              <div class="mob-sec-benefits-grid">
-                <div class="mob-sec-benefits-card">Excellent adhesive strength
-                </div>
-                <div class="mob-sec-benefits-card">Non-sag, thixotropic</div>
-                <div class="mob-sec-benefits-card">Excellent adhesion to metals and composites</div>
-                <div class="mob-sec-benefits-card">Excellent resistance to vibration</div>
-                <div class="mob-sec-benefits-card">Good impact strength </div>
-                <div class="mob-sec-benefits-card">Strong bonding with glass and ceramics
-                </div>
-                <div class="mob-sec-benefits-card">Excellent resistance to vibration
-                </div>
-                <div class="mob-sec-benefits-card">Minimum cure temperature of start from 80 °C </div>
-                <div class="mob-sec-benefits-card">Extremely high tensile and compressive Strength </div>
-                <div class="mob-sec-benefits-card">High temperature resistance</div>
-                <div class="mob-sec-benefits-card">Ready to dispense—no mixing is required </div>
-                <div class="mob-sec-benefits-card">Solvent-free </div>
-                <div class="mob-sec-benefits-card">Good resistance to chemicals
-                </div>
-                <div class="mob-sec-benefits-card">Excellent chemical resistance </div>
-                <div class="mob-sec-benefits-card">Compatible with many types of plastics</div>
-              </div>
-
-              <!-- VIDEO SECTION -->
-              <div class="mob-sec-benefits-video-container">
-                <img src="./assets/images/Metal_epoxy/11116_Metal_Epoxy_Benefits.webp" alt="Workspace video thumbnail"
-                  class="mob-sec-benefits-video-thumbnail" loading="lazy" />
-                <button class="mob-sec-benefits-play-button" aria-label="Play video">
-                  <img src="./assets/images/play_btn.svg" alt="play button" class="openVideoPopup">
-                </button>
-              </div>
-
-            </div>
-          </div>
-
-
-        </div>
-      </section>
-
-            <section class="product-grid"></section>
-
 
       <footer class="footer-main">
         <div class="footer">
           <div class="footer-left">
             <img src="../White logo.svg" alt="OODA Bond Logo" class="footer-logo" />
 
-            <div class="social-icons">
-              <a href="#"><img src="../footer/fb_svg.svg" alt="Facebook" /></a>
-              <a href="#"><img src="../footer/twitter_svg.svg" alt="X (Twitter)" /></a>
-              <a href="#"><img src="../footer/youtub_svg.svg" alt="Play" /></a>
-              <a href="#"><img src="../footer/telegram_svg.svg" alt="Telegram" /></a>
+            <div class="footer-sec">
+              <div class="social-icons">
+                <a href="#"><img src="../footer/fb_svg.svg" alt="Facebook" /></a>
+                <a href="#"><img src="../footer/twitter_svg.svg" alt="X (Twitter)" /></a>
+                <a href="#"><img src="../footer/youtub_svg.svg" alt="Play" /></a>
+                <a href="#"><img src="../footer/telegram_svg.svg" alt="Telegram" /></a>
+              </div>
+              <div class="footer-contact">
+                <a href="mailto:customercare@oodabond.com">
+                  <img src="../footer/email_svg.svg" />
+                  <span>customercare@oodabond.com</span>
+                </a>
+                <a href="tel:+919840338011">
+                  <img src="../footer/mobile_svg.svg" />
+                  <span>+91 9840338011</span>
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div class="footer-right">
-            <div class="footer-contact">
-              <a href="mailto:customercare@oodabond.com">
-                <img src="../footer/email_svg.svg" />
-                <span>customercare@oodabond.com</span>
-              </a>
-              <a href="tel:+919840338011">
-                <img src="../footer/mobile_svg.svg" />
-                <span>+91 9840338011</span>
-              </a>
-            </div>
-
-            <div class="footer-links">
-              <h3><img src="../nav/useful_link.svg" alt=""> Useful links</h3>
-              <nav>
-                <a href="../homepage/">Home</a>
-                <a href="../about_us/">About Us</a>
-                <a href="../Our Services/">Our Services</a>
-                <a href="../contact/">Contact us</a>
-              </nav>
-            </div>
           </div>
         </div>
 
@@ -587,16 +191,16 @@
     </div>
   </div>
 
-  
-    <div id="videoModal" class="video-modal">
-  <div class="video-content">
-    <span class="close-btn" id="closeVideoPopup">&times;</span>
-    <video controls autoplay>
-      <source src="../ooda_pre_loader.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+
+  <div id="videoModal" class="video-modal">
+    <div class="video-content">
+      <span class="close-btn" id="closeVideoPopup">&times;</span>
+      <video controls autoplay>
+        <source src="../ooda_pre_loader.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
-</div>
 
   <canvas id="fluid"></canvas>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -616,6 +220,8 @@
 
 
   <script src="./script.js"></script>
+  <script src="./midSection.js"></script>
+
   <script src="../global.js"></script>
   <script>
     let time_line_svg = "./assets/svg/1116_metal_eproxy_timeline.svg";
@@ -630,17 +236,6 @@
         animateSVGPaths();
         ScrollTrigger.refresh();
 
-      });
-
-
-    fetch('./assets/svg/1116_metal_eproxy TP.svg')
-      .then(response => response.text())
-      .then(svgText => {
-        document.getElementById('panel1').innerHTML = svgText;
-        startAnimationCircle();
-      })
-      .catch(error => {
-        console.error('Error loading SVG:', error);
       });
 
   </script>

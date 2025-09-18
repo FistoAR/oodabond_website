@@ -97,7 +97,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: start;
-    padding: 20px;
+    padding: 10% 2%;
 }
 
 .container {
@@ -129,7 +129,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    height: fit-content;
     justify-content: space-between;
 }
 
@@ -228,18 +227,66 @@ body {
     padding: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border: 2px solid #FFFFFF;
+    position: relative;
 }
 
 .contact-form-section form {
-
     display: flex;
     flex-direction: column;
     height: 90%;
     justify-content: space-between;
-    position: relative;
-    /* flex-wrap: wrap; */
+    padding: 2%;
+}
+
+@media screen and (min-width:1200px) {
+    .contact-form-section form {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .submit-btn {
+        position: absolute;
+        left: 5%;
+        bottom: 3%;
+    }
+
+    .contact-form-section form {
+        height: 80%;
+    }
+
+    .contact-form-section {
+        height: 70%;
+    }
+
+
+    .contact-form-section form {
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: #424242 #f1f1f1;
+    }
+
+    .submit-btn {
+        position: absolute;
+        left: 5%;
+        bottom: 3%;
+    }
+
+    .contact-form-section form {
+        height: 80%;
+    }
+
+    .contact-form-section {
+        height: 70%;
+    }
+
+    .contact-info {
+
+        height: 70%;
+    }
 
 }
+
 
 .form-title {
     color: white;
